@@ -37,10 +37,148 @@
     font-style: italic;
 }
 
-h1 {
-    font-family: "Briston", serif;
+:root {
+    --hero-offset-padding: 6rem;
+    --title-font-size: calc(5rem + 10vw);
+    --subtitle-font-size: 1.5rem;
+    --header-height: 10vh;
 }
 
-p {
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("../img/texture_repeat.png");
+    background-repeat: repeat;
+}
+
+/* HERO SECTION */
+
+#hero h1 {
+    font-family: "Briston", serif;
+    font-size: var(--title-font-size);
+    letter-spacing: 0.5rem;
+    padding: var(--hero-offset-padding) 0;
+    margin: 0;
+    text-align: center;
+}
+
+#hero p {
     font-family: "Sofia Pro", sans-serif;
+    font-size: var(--subtitle-font-size);
+    padding: 0;
+    margin: 0;
+}
+
+#hero {
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    min-height: 1000px;
+}
+
+.bg-tile-rows {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 1000px;
+}
+
+.tile-row {
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.tile-row-1 {
+    min-height: 454px;
+    background-image: url("../img/tile_row_1.png");
+}
+
+.tile-row-2 {
+    min-height: 476px;
+    background-image: url("../img/tile_row_2.png");
+}
+
+.title-and-subtitle {
+    display: flex;
+    flex-direction: column;
+    /* min-height: calc(454px + 476px); */
+    min-height: 1000px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-offset-hero {
+    font-family: "Briston", serif;
+    font-size: var(--title-font-size);
+    padding: var(--hero-offset-padding) 0;
+}
+
+/* NAVBAR */
+
+header {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+
+    transition: background-color 1s ease-in-out;
+}
+
+.logo {
+    padding: 1rem;
+    height: 70%;
+}
+
+header ul {
+    width: 50%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: "Sofia Pro", sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+header ul li {
+    flex-basis: 25%;
+    height: 100%;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: black;
+    margin: 0;
+    display: block;
+    /* height: 5rem; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+.initial-header-space {
+    height: var(--header-height);
+}
+
+.color-after-scrolling {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* MENU SECTION */
+
+#menu h2 {
+    font-family: "Briston", serif;
+    font-size: 5rem;
 }
